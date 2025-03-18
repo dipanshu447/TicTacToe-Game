@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: rgb(255, 217, 0);
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    /* border: 5px solid white; */
+}
+
+.box {
+    width: 166.6px;
+    height: 166.6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    border-style:dashed;
+}
+
+.box img {
+    width: 80%;
+}
