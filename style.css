@@ -15,26 +15,33 @@ body {
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
-    background-color: rgb(255, 217, 0);
+    /* background-color: rgb(255, 217, 0); */
+    background-color: #FFD3BA;
     justify-content: center;
     align-items: center;
-    gap: 50px;
 }
 
 .container {
     width: 500px;
     height: 500px;
-    /* border: 5px solid white; */
+    border: 3px solid #00C2D1;
+    border-radius: 20px;
+    padding: 5px;
+    border-style: dashed;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
 }
 
 .box {
-    width: 166.6px;
-    height: 166.6px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid white;
     border-style: dashed;
+    background-color: #00C2D1;
+    box-sizing: border-box;
 }
 
 .box img {
@@ -44,4 +51,6 @@ body {
 header {
     font-size: 30px;
     font-weight: 500;
+    margin-bottom: 50px;
 }
+

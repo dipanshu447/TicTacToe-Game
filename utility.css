@@ -34,3 +34,19 @@
 .bBottom {
     border-bottom: 0;
 }
+
+.topLRadius {
+    border-top-left-radius: 20px;
+}
+
+.topRRadius {
+    border-top-right-radius: 20px;
+}
+
+.bottomLRadius {
+    border-bottom-left-radius: 20px;
+}
+
+.bottomRRadius {
+    border-bottom-right-radius: 20px;
+}
