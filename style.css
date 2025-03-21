@@ -15,16 +15,16 @@ body {
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
-    /* background-color: rgb(255, 217, 0); */
     background-color: #FFD3BA;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .container {
     width: min(90vw,500px);
     height: min(90vw,500px);
-    border: 3px solid #00C2D1;
+    border: 3px solid #613F75;
     border-radius: 20px;    
     padding: 5px;
     border-style: dashed;
@@ -40,7 +40,7 @@ body {
     align-items: center;
     border: 2px solid white;
     border-style: dashed;
-    background-color: #00C2D1;
+    background-color: #613F75;
     box-sizing: border-box;
 }
 
@@ -52,4 +52,47 @@ header {
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 50px;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px 30px;
+    border: 0;
+    border-radius: 15px;
+    background-color: #aa66b8;
+    color: white;
+    box-shadow: 0px 3px 5px #00000073;
+    transition: all 1s cubic-bezier(0, 1.09, 0.07, 1.04);
+}
+
+button:hover {
+    background-color: #b478c2;
+    transform: scale(1.1);
+}
+
+.loading {
+    color: #aa58bb;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border: 10px solid #ebc4ad;
+    border-top: 10px solid #aa66b8;
+    border-radius: 50%;
+    position: relative;
+    animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.disHand {
+    display: none;
 }

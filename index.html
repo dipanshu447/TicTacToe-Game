@@ -8,8 +8,20 @@
     <link rel="stylesheet" href="utility.css">
 </head>
 <body>
-    <header>Player X's Turn</header>
-    <div class="container">
+    <div class="overlay flex flex-column justify-center">
+        <header>Choose your symbol</header>
+        <div class="btn flex justify-center gap-2">
+            <button data-choice="X">X</button>
+            <button data-choice="O">O</button>
+        </div>
+    </div>
+    <div class="loading flex flex-column item-center notdisplay">
+        <header>Loading</header>
+        <div class="circle">
+        </div>
+    </div>
+    <header class="annoncer disHand"></header>
+    <div class="container disHand">
             <div data-index="0" class="box topLRadius bTop bLeft"></div>
             <div data-index="1" class="box bTop"></div>
             <div data-index="2" class="box topRRadius bTop bRight"></div>
@@ -23,19 +35,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-<!-- <div class="rows flex">
-    <div data-index="0" class="box bTop bLeft"></div>
-    <div data-index="1" class="box bTop"></div>
-    <div data-index="2" class="box bTop bRight"></div>
-</div>
-<div class="rows flex">
-    <div data-index="3" class="box bLeft"></div>
-    <div data-index="4" class="box"></div>
-    <div data-index="5" class="box bRight"></div>
-</div>
-<div class="rows flex">
-    <div data-index="6" class="box bLeft bBottom"></div>
-    <div data-index="7" class="box bBottom"></div>
-    <div data-index="8" class="box bRight bBottom"></div>
-</div> -->

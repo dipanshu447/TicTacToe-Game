@@ -22,6 +22,14 @@
     justify-content: space-between;
 }
 
+.gap-1 {
+    gap: 10px;
+}
+
+.gap-2 {
+    gap: 20px;
+}
+
 .bTop {
     border-top: 0;
 }
@@ -49,4 +57,8 @@
 
 .bottomRRadius {
     border-bottom-right-radius: 20px;
+}
+
+.notdisplay {
+    display: none;
 }

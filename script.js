@@ -1,3 +1,20 @@
+let ele = document.querySelector('.loading header');
+let count = 0;
+let textNode = ele.textContent;
+let interval = setInterval(() => {
+    count = (count + 1) % 4;
+    ele.textContent = textNode + '.'.repeat(count);
+}, 1000);
+var delay = async () => {
+    let randomload = (Math.floor(Math.random() * 3)) * 1000;
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            clearInterval(interval);
+            document.querySelector('.loading').classList.add('notdisplay');
+            resolve();
+        }, randomload);
+    })
+};
 var boxes = document.querySelectorAll('.box');
 var board = ["", "", "", "", "", "", "", "", ""];
 var winCombo = [
@@ -5,8 +22,7 @@ var winCombo = [
     [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
     [0, 4, 8], [2, 4, 6] // diagonals
 ];
-var annoncer = document.getElementsByTagName("header")[0];
-
+var annoncer = document.querySelector(".annoncer");
 var checkWinner = (player) => {
     for (let i = 0; i < winCombo.length; i++) {
         const [a, b, c] = winCombo[i];
@@ -16,7 +32,6 @@ var checkWinner = (player) => {
     }
     return false;
 }
-
 let gameOver = false;
 var makeMove = (index, player) => {
     if (board[index] === "" && !gameOver) {
@@ -31,35 +46,51 @@ var makeMove = (index, player) => {
     }
 }
 
-// swtiching between X and O
-let turn = true;
-let player = "";
-boxes.forEach((e) => {
-    e.addEventListener("click", () => {
-        if (e.children.length > 0) return;
-        let index = e.dataset.index;
-        if (board[index] !== "") return;
-
-        let XO = document.createElement('img');
-        if (!gameOver) {
-            if (turn) {
-                player = "X";
-                XO.src = 'https://img.icons8.com/?size=100&id=1510&format=png&color=000000';
-                XO.alt = 'X-img';
-                annoncer.innerText = "Player O's Turn";
-                makeMove(index, player);
-            } else {
-                player = "O";
-                XO.src = 'https://img.icons8.com/?size=100&id=TBVOsh5onJms&format=png&color=000000';
-                XO.alt = 'circle-img';
-                annoncer.innerText = "Player X's Turn";
-                makeMove(index, player);
-            }
-            e.appendChild(XO);
-            turn = !turn;
-        }
-
-        console.log(board);
-        console.log(checkWinner(player));
+(async function () {
+    var startbtn = document.querySelectorAll('.btn button');
+    var choice;
+    var turn;
+    startbtn.forEach(e => {
+        e.addEventListener("click", async () => {
+            choice = e.dataset.choice;
+            turn = choice === "X";
+            annoncer.innerText = turn ? "Player X's Turn" : "Player O's Turn";
+            document.querySelectorAll('.overlay')[0].classList.toggle('notdisplay');
+            document.querySelector('.loading').classList.remove('notdisplay');
+            await delay();
+            document.querySelectorAll('.disHand').forEach(e => e.classList.toggle('disHand'))
+        })
     })
-}) 
+
+    // swtiching between X and O
+    let player = "";
+    boxes.forEach((e) => {
+        e.addEventListener("click", () => {
+            if (e.children.length > 0) return;
+            let index = e.dataset.index;
+            if (board[index] !== "") return;
+
+            let XO = document.createElement('img');
+            if (!gameOver) {
+                if (turn) {
+                    player = "X";
+                    XO.src = 'https://img.icons8.com/?size=100&id=1510&format=png&color=000000';
+                    XO.alt = 'X-img';
+                    annoncer.innerText = "Player O's Turn";
+                    makeMove(index, player);
+                } else {
+                    player = "O";
+                    XO.src = 'https://img.icons8.com/?size=100&id=TBVOsh5onJms&format=png&color=000000';
+                    XO.alt = 'circle-img';
+                    annoncer.innerText = "Player X's Turn";
+                    makeMove(index, player);
+                }
+                e.appendChild(XO);
+                turn = !turn;
+            }
+
+            console.log(board);
+            console.log(checkWinner(player));
+        })
+    })
+})()
