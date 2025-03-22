@@ -9,7 +9,6 @@ var delay = async () => {
     let randomload = (Math.floor(Math.random() * 3)) * 1000;
     return new Promise((resolve) => {
         setTimeout(() => {
-            clearInterval(interval);
             document.querySelector('.loading').classList.add('notdisplay');
             resolve();
         }, randomload);
@@ -39,11 +38,21 @@ var makeMove = (index, player) => {
         if (checkWinner(player)) {
             annoncer.innerText = `Player ${player} Won`;
             gameOver = true;
+            document.querySelector('.restart').classList.remove('resHand');
         } else if (!board.includes("")) {
             gameOver = true;
             annoncer.innerText = "It's a Tie";
+            document.querySelector('.restart').classList.remove('resHand');
         }
     }
+}
+
+let restartGame = async () => {
+    document.querySelectorAll('.e').forEach(e => e.classList.toggle('disHand'))
+    document.querySelector('.restart').classList.add('resHand');
+    document.querySelector('.loading').classList.remove('notdisplay');
+    await delay();
+    location.reload();
 }
 
 (async function () {
@@ -92,5 +101,9 @@ var makeMove = (index, player) => {
             console.log(board);
             console.log(checkWinner(player));
         })
+    })
+
+    document.querySelector('.restart button').addEventListener("click", () => {
+         restartGame();
     })
 })()
