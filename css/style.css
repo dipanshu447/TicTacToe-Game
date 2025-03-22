@@ -109,8 +109,20 @@ button:hover {
     margin-top: 20px;
 }
 
+.btn {
+    flex-wrap: wrap;
+}
+
 @media only screen and (max-width:450px){
     header {
         font-size: 24px;
+    }
+
+    button{
+        font-size: 15px;
+    }
+
+    .annoncer {
+        font-size: 20px;
     }
 }

@@ -34,6 +34,17 @@ var checkWinner = (player) => {
 let gameOver = false;
 var makeMove = (index, player) => {
     if (board[index] === "" && !gameOver) {
+        let XO = document.createElement('img');
+        if (player === "X") {
+            XO.src = 'https://img.icons8.com/?size=100&id=1510&format=png&color=ffffff';
+            XO.alt = 'X-img';
+            annoncer.innerText = "Player O's Turn";
+        } else {
+            XO.src = 'https://img.icons8.com/?size=100&id=TBVOsh5onJms&format=png&color=ffffff';
+            XO.alt = 'circle-img';
+            annoncer.innerText = "Player X's Turn";
+        }
+        boxes[index].appendChild(XO);
         clickSound.currentTime = 0;
         clickSound.play();
         board[index] = player;
@@ -41,6 +52,42 @@ var makeMove = (index, player) => {
             annoncer.innerText = `Player ${player} Won`;
             gameOver = true;
             win_game.play();
+            document.querySelector('.restart').classList.remove('resHand');
+        } else if (!board.includes("")) {
+            gameOver = true;
+            annoncer.innerText = "It's a Tie";
+            tie_game.play();
+            document.querySelector('.restart').classList.remove('resHand');
+        }
+    }
+}
+
+var ComputerMove = () => {
+    let emptySpace = [];
+    board.forEach((value, index) => {
+        if (value === "") emptySpace.push(index);
+    });
+    const randomIndex = emptySpace[Math.floor(Math.random() * emptySpace.length)];
+    if (board[randomIndex] === "" && !gameOver) {
+        let computerPlayer = choice === "X" ? "O" : "X";
+        clickSound.currentTime = 0;
+        clickSound.play();
+        board[randomIndex] = computerPlayer;
+        let XO = document.createElement('img');
+        if (computerPlayer === "X") {
+            XO.src = 'https://img.icons8.com/?size=100&id=1510&format=png&color=ffffff';
+            XO.alt = 'X-img';
+            annoncer.innerText = "Player O's Turn";
+        } else {
+            XO.src = 'https://img.icons8.com/?size=100&id=TBVOsh5onJms&format=png&color=ffffff';
+            XO.alt = 'circle-img';
+            annoncer.innerText = "Player X's Turn";
+        }
+        boxes[randomIndex].appendChild(XO);
+        if (checkWinner(computerPlayer)) {
+            annoncer.innerText = `Player ${computerPlayer} (Computer) Won`;
+            gameOver = true;    
+            tie_game.play();
             document.querySelector('.restart').classList.remove('resHand');
         } else if (!board.includes("")) {
             gameOver = true;
@@ -66,13 +113,15 @@ var clickSound = new Audio('./assets/Click_sound.wav');
 var tie_game = new Audio('./assets/game_tie_sound.mp3');
 var win_game = new Audio('./assets/win_gamesound.mp3');
 
+var choice;
 (async function () {
     var startbtn = document.querySelectorAll('.btn button');
-    var choice;
     var turn;
+    var computer = false;
     startbtn.forEach(e => {
         e.addEventListener("click", async () => {
             choice = e.dataset.choice;
+            computer = choice !== "Pvp";
             turn = choice === "X";
             annoncer.innerText = turn ? "Player X's Turn" : "Player O's Turn";
             document.querySelectorAll('.overlay')[0].classList.toggle('notdisplay');
@@ -92,23 +141,18 @@ var win_game = new Audio('./assets/win_gamesound.mp3');
             let index = e.dataset.index;
             if (board[index] !== "") return;
 
-            let XO = document.createElement('img');
             if (!gameOver) {
-                if (turn) {
-                    player = "X";
-                    XO.src = 'https://img.icons8.com/?size=100&id=1510&format=png&color=ffffff';
-                    XO.alt = 'X-img';
-                    annoncer.innerText = "Player O's Turn";
+                if(!computer) {
+                    player = turn ? "X" : "O";
                     makeMove(index, player);
-                } else {
-                    player = "O";
-                    XO.src = 'https://img.icons8.com/?size=100&id=TBVOsh5onJms&format=png&color=ffffff';
-                    XO.alt = 'circle-img';
-                    annoncer.innerText = "Player X's Turn";
+                    turn = !turn;
+                }else {
+                    player = turn ? "X" : "O";
                     makeMove(index, player);
+                    setTimeout(() => {
+                        ComputerMove();
+                    }, 500);
                 }
-                e.appendChild(XO);
-                turn = !turn;
             }
         })
     })
