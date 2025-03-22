@@ -74,13 +74,13 @@ var makeMove = (index, player) => {
             if (!gameOver) {
                 if (turn) {
                     player = "X";
-                    XO.src = 'https://img.icons8.com/?size=100&id=1510&format=png&color=000000';
+                    XO.src = 'https://img.icons8.com/?size=100&id=1510&format=png&color=ffffff';
                     XO.alt = 'X-img';
                     annoncer.innerText = "Player O's Turn";
                     makeMove(index, player);
                 } else {
                     player = "O";
-                    XO.src = 'https://img.icons8.com/?size=100&id=TBVOsh5onJms&format=png&color=000000';
+                    XO.src = 'https://img.icons8.com/?size=100&id=TBVOsh5onJms&format=png&color=ffffff';
                     XO.alt = 'circle-img';
                     annoncer.innerText = "Player X's Turn";
                     makeMove(index, player);
