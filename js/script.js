@@ -34,14 +34,18 @@ var checkWinner = (player) => {
 let gameOver = false;
 var makeMove = (index, player) => {
     if (board[index] === "" && !gameOver) {
+        clickSound.currentTime = 0;
+        clickSound.play();
         board[index] = player;
         if (checkWinner(player)) {
             annoncer.innerText = `Player ${player} Won`;
             gameOver = true;
+            win_game.play();
             document.querySelector('.restart').classList.remove('resHand');
         } else if (!board.includes("")) {
             gameOver = true;
             annoncer.innerText = "It's a Tie";
+            tie_game.play();
             document.querySelector('.restart').classList.remove('resHand');
         }
     }
@@ -51,9 +55,16 @@ let restartGame = async () => {
     document.querySelectorAll('.e').forEach(e => e.classList.toggle('disHand'))
     document.querySelector('.restart').classList.add('resHand');
     document.querySelector('.loading').classList.remove('notdisplay');
+    clickSound.currentTime = 0;
+    clickSound.play();
     await delay();
     location.reload();
 }
+
+// games sounds effects
+var clickSound = new Audio('./assets/Click_sound.wav');
+var tie_game = new Audio('./assets/game_tie_sound.mp3');
+var win_game = new Audio('./assets/win_gamesound.mp3');
 
 (async function () {
     var startbtn = document.querySelectorAll('.btn button');
@@ -66,6 +77,8 @@ let restartGame = async () => {
             annoncer.innerText = turn ? "Player X's Turn" : "Player O's Turn";
             document.querySelectorAll('.overlay')[0].classList.toggle('notdisplay');
             document.querySelector('.loading').classList.remove('notdisplay');
+            clickSound.currentTime = 0;
+            clickSound.play();
             await delay();
             document.querySelectorAll('.disHand').forEach(e => e.classList.toggle('disHand'))
         })
@@ -97,13 +110,10 @@ let restartGame = async () => {
                 e.appendChild(XO);
                 turn = !turn;
             }
-
-            console.log(board);
-            console.log(checkWinner(player));
         })
     })
 
     document.querySelector('.restart button').addEventListener("click", () => {
-         restartGame();
+        restartGame();
     })
 })()
