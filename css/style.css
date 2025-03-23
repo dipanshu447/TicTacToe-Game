@@ -4,7 +4,17 @@
 }
 
 :root {
-    --board-theme : #613F75;
+    --board-theme : #040F0F;
+    --background : #f4f1e9;
+    --btn-bg : #FCFFFC;
+    --btn-bg-hover : #dbdbdb;   
+    --loading-bg-color : #cfcfcf;
+    /* --board-theme : #613F75;
+    --background : #FFD3BA;
+    --btn-bg : #aa66b8;
+    --btn-bg-hover : #b478c2;
+    --loading-color : #aa58bb;
+    --loading-bg-color : #ebc4ad; */
 }
 
 * {
@@ -19,7 +29,7 @@ body {
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
-    background-color: #FFD3BA;
+    background-color: var(--background);
     justify-content: center;
     align-items: center;
     position: relative;
@@ -63,27 +73,23 @@ button {
     padding: 10px 30px;
     border: 0;
     border-radius: 15px;
-    background-color: #aa66b8;
-    color: white;
+    background-color: var(--btn-bg);
+    color: rgb(0, 0, 0);
     box-shadow: 0px 3px 5px #00000073;
     transition: all 1s cubic-bezier(0, 1.09, 0.07, 1.04);
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #b478c2;
+    background-color: var(--btn-bg-hover);
     transform: scale(1.1);
-}
-
-.loading {
-    color: #aa58bb;
 }
 
 .circle {
     width: 100px;
     height: 100px;
-    border: 10px solid #ebc4ad;
-    border-top: 10px solid #aa66b8;
+    border: 10px solid var(--board-theme);
+    border-top: 10px solid var(--loading-bg-color);
     border-radius: 50%;
     position: relative;
     animation: loading 1s linear infinite;

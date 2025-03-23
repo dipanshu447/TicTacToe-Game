@@ -65,9 +65,9 @@
 
 .dark-mode {
     background-color: #000000; 
-    filter: invert(1) hue-rotate(150deg);
+    filter: invert(1) hue-rotate(200deg);
 }
 
 .shadow-remover {
-    box-shadow: none;
+    border: 2px solid rgba(0, 0, 0, 0.658);
 }
