@@ -62,3 +62,12 @@
 .notdisplay {
     display: none;
 }
+
+.dark-mode {
+    background-color: #000000; 
+    filter: invert(1) hue-rotate(150deg);
+}
+
+.shadow-remover {
+    box-shadow: none;
+}

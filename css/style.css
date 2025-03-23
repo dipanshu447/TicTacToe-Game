@@ -23,7 +23,6 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    /* filter: invert(1); */
 }
 
 .container {
@@ -31,7 +30,7 @@ body {
     height: min(90vw,500px);
     border: 3px solid var(--board-theme);
     border-radius: 20px;    
-    padding: 5px;
+    padding: 3px;
     border-style: dashed;
     box-sizing: border-box;
     display: grid;
@@ -68,6 +67,7 @@ button {
     color: white;
     box-shadow: 0px 3px 5px #00000073;
     transition: all 1s cubic-bezier(0, 1.09, 0.07, 1.04);
+    cursor: pointer;
 }
 
 button:hover {
@@ -134,6 +134,20 @@ p {
     font-size: 15px;
 }
 
+.theme-change {
+    position: fixed;
+    top: 0;
+    right: 0px;
+    margin: 10px 20px;
+    width: 3em;
+    transition: all 1s cubic-bezier(0, 1.09, 0.07, 1.04);
+    cursor: pointer;
+}
+
+.theme-change:hover{
+    transform: scale(1.1);
+}
+
 @media only screen and (max-width:450px){
     header {
         font-size: 20px;
@@ -153,5 +167,10 @@ p {
 
     .annoncer {
         font-size: 20px;
+    }
+
+    .theme-change {
+        margin: 10px;
+        width: 10%;
     }
 }

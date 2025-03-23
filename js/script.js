@@ -112,6 +112,7 @@ let restartGame = async () => {
 var clickSound = new Audio('./assets/Click_sound.wav');
 var tie_game = new Audio('./assets/game_tie_sound.mp3');
 var win_game = new Audio('./assets/win_gamesound.mp3');
+var switchSound = new Audio('./assets/darkMode_switch_sound.mp3');
 
 var choice;
 (async function () {
@@ -159,5 +160,12 @@ var choice;
 
     document.querySelector('.restart button').addEventListener("click", () => {
         restartGame();
+    })
+
+    document.querySelector('.theme-change').addEventListener("click", () => {
+        switchSound.currentTime = 0;
+        switchSound.play();
+        document.querySelector('body').classList.toggle('dark-mode');
+        document.querySelectorAll('button').forEach(e => e.classList.toggle('shadow-remover'))
     })
 })()
