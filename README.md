@@ -32,9 +32,6 @@ This project took me around 6 days to complete. I started with a basic player vs
 
 - Creating a responsive design using CSS.
 
-It was a fantastic learning experience, and I’m proud of how it turned out!
-
-
 ## 🛠️ Technologies Used 
 
 - **HTML** for the structure
@@ -47,7 +44,9 @@ It was a fantastic learning experience, and I’m proud of how it turned out!
 
 ### Desktop Preview
 
-![Desktop Preview](./assets/readme/desktop-preview.gif)
+<div style="text-align:center;">
+    <img src="./assets/readme/desktop-preview.gif" width="100%" height="100%">
+</div>
 
 ### Mobile Preview
 
@@ -55,7 +54,9 @@ It was a fantastic learning experience, and I’m proud of how it turned out!
     <img src="./assets/readme/mobile-preview.gif" width="50%" height="50%">
 </div>
 
-## 🕹️ How to Play 
+## 🖥️ Clone and Run Locally 
+
+If you’d like to explore the code or customize the game, follow these steps to clone and run it locally:
 
 1. Clone the repository:
 
@@ -65,12 +66,10 @@ It was a fantastic learning experience, and I’m proud of how it turned out!
 2. Navigate to the project folder:
 
     ```bash
-    cd Tic-Tac-Toe
+    cd TicTacToe-Game
     ```
 
 3. Open the index.html file in your browser.
-
-4. Choose your game mode and start playing!
 
 ## 📜 License 
 
