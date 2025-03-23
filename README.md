@@ -34,23 +34,6 @@ This project took me around 6 days to complete. I started with a basic player vs
 
 It was a fantastic learning experience, and I’m proud of how it turned out!
 
-## 🕹️ How to Play 
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/dipanshu447/TicTacToe-Game.git
-    cd Tic-Tac-Toe
-    ```
-2. Navigate to the project folder:
-
-cd tic-tac-toe
-
-3. Open the index.html file in your browser.
-
-4. Choose your game mode and start playing!
-
----
 
 ## 🛠️ Technologies Used 
 
@@ -60,15 +43,40 @@ cd tic-tac-toe
 
 - **JavaScript** for the game logic and interactivity
 
----
+## Project Showcase
+
+### Desktop Preview
+
+![Desktop Preview](./assets/readme/desktop-preview.gif)
+
+### Mobile Preview
+
+<div style="text-align:center;">
+    <img src="./assets/readme/mobile-preview.gif" width="50%" height="50%">
+</div>
+
+## 🕹️ How to Play 
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/dipanshu447/TicTacToe-Game.git
+    ```
+2. Navigate to the project folder:
+
+    ```bash
+    cd Tic-Tac-Toe
+    ```
+
+3. Open the index.html file in your browser.
+
+4. Choose your game mode and start playing!
 
 ## 📜 License 
 
 This project is licensed under the **MIT License**. You are free to use, modify, and distribute it with proper attribution.
 
 For more details, see the [LICENSE](LICENSE) file.
-
----
 
 ## 💬 Feedback
 
