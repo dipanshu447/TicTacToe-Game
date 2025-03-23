@@ -44,9 +44,7 @@ This project took me around 6 days to complete. I started with a basic player vs
 
 ### Desktop Preview
 
-<div style="text-align:center;">
-    <img src="./assets/readme/desktop-preview.gif" width="100%" height="100%">
-</div>
+![Desktop Preview](./assets/readme/desktop-preview.gif)
 
 ### Mobile Preview
 
