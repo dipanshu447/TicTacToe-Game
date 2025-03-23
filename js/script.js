@@ -127,6 +127,7 @@ var choice;
             annoncer.innerText = turn ? "Player X's Turn" : "Player O's Turn";
             document.querySelectorAll('.overlay')[0].classList.toggle('notdisplay');
             document.querySelector('.loading').classList.remove('notdisplay');
+            document.querySelector('.credits').classList.toggle('notdisplay');
             clickSound.currentTime = 0;
             clickSound.play();
             await delay();
