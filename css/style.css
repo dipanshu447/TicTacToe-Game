@@ -9,12 +9,6 @@
     --btn-bg : #FCFFFC;
     --btn-bg-hover : #dbdbdb;   
     --loading-bg-color : #cfcfcf;
-    /* --board-theme : #613F75;
-    --background : #FFD3BA;
-    --btn-bg : #aa66b8;
-    --btn-bg-hover : #b478c2;
-    --loading-color : #aa58bb;
-    --loading-bg-color : #ebc4ad; */
 }
 
 * {
@@ -167,7 +161,7 @@ p {
 }
 
 @media only screen and (max-width:450px){
-    header {
+    header, .annoncer  {
         font-size: 20px;
     }
 
@@ -181,10 +175,6 @@ p {
 
     .overlay header:nth-of-type(2){
         font-size: 14px;
-    }
-
-    .annoncer {
-        font-size: 20px;
     }
 
     .theme-change {
