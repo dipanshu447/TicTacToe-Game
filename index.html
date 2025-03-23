@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/utility.css">
 </head>
+
 <body>
     <div class="overlay flex flex-column justify-center item-center">
-        <header>Choose your symbol</header>
+        <header> Welcome to Tic Tac Toe!</header>
+        <p> Ready to test your strategy and luck? </p>
+        <header>Pick your side and outsmart your opponent!</header>
         <div class="btn flex justify-center gap-2">
             <button data-choice="X">Play as X (vs Computer)</button>
             <button data-choice="O">Play as O (vs Computer)</button>
@@ -24,18 +28,19 @@
     <header class="annoncer disHand e"></header>
     <div class="container disHand e">
         <div data-index="0" class="box topLRadius bTop bLeft"></div>
-            <div data-index="1" class="box bTop"></div>
-            <div data-index="2" class="box topRRadius bTop bRight"></div>
-            <div data-index="3" class="box bLeft"></div>
-            <div data-index="4" class="box"></div>
-            <div data-index="5" class="box bRight"></div>
-            <div data-index="6" class="box bottomLRadius bLeft bBottom"></div>
-            <div data-index="7" class="box bBottom"></div>
-            <div data-index="8" class="box bottomRRadius bRight bBottom"></div>
-        </div>
-        <div class="restart resHand">
-            <button>Restart</button>
-        </div>
+        <div data-index="1" class="box bTop"></div>
+        <div data-index="2" class="box topRRadius bTop bRight"></div>
+        <div data-index="3" class="box bLeft"></div>
+        <div data-index="4" class="box"></div>
+        <div data-index="5" class="box bRight"></div>
+        <div data-index="6" class="box bottomLRadius bLeft bBottom"></div>
+        <div data-index="7" class="box bBottom"></div>
+        <div data-index="8" class="box bottomRRadius bRight bBottom"></div>
+    </div>
+    <div class="restart resHand">
+        <button>Restart</button>
+    </div>
     <script src="./js/script.js"></script>
 </body>
+
 </html>

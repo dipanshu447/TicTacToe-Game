@@ -23,6 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    /* filter: invert(1); */
 }
 
 .container {
@@ -113,13 +114,41 @@ button:hover {
     flex-wrap: wrap;
 }
 
+.overlay header:nth-of-type(1){
+   margin-bottom: 30px;
+}
+
+.overlay header:nth-of-type(2){
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.btn button{
+    font-size: 15px;
+}
+
 @media only screen and (max-width:450px){
     header {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     button{
         font-size: 15px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .overlay header:nth-of-type(2){
+        font-size: 14px;
     }
 
     .annoncer {
